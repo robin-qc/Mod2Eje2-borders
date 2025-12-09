@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Borders Master | Efectos CSS Futuristas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuentes futuristas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Preloader neon */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        .loader-text {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-cyan);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-shadow: var(--glow-cyan);
+        }
+        
+        .loader-dots::after {
+            content: '';
+            animation: loadingDots 1.5s infinite;
+        }
+        
+        @keyframes loadingDots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-text">
+            INITIALIZING NEON SYSTEM<span class="loader-dots"></span>
+        </div>
+    </div>
+    
+    <!-- Sistema de partículas -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>Neon Borders Master</h1>
+        <p class="subtitle">Dominio total de borders y border-radius con efectos futuristas</p>
+
+        <!-- Sección 1: Estilos de Border Extendidos -->
+        <section class="demo-section">
+            <h2>1. Estilos de Border - Colección Completa</h2>
+            <div class="border-styles-grid">
+                <div class="border-box border-solid">
+                    <strong>solid</strong>
+                    <p>border: 3px solid var(--neon-cyan);</p>
+                </div>
+                
+                <div class="border-box border-dashed">
+                    <strong>dashed</strong>
+                    <p>border: 3px dashed var(--neon-green);</p>
+                </div>
+                
+                <div class="border-box border-dotted">
+                    <strong>dotted</strong>
+                    <p>border: 3px dotted var(--neon-pink);</p>
+                </div>
+                
+                <div class="border-box border-double">
+                    <strong>double</strong>
+                    <p>border: 5px double var(--neon-yellow);</p>
+                </div>
+                
+                <div class="border-box border-groove">
+                    <strong>groove</strong>
+                    <p>border: 5px groove var(--neon-purple);</p>
+                </div>
+                
+                <div class="border-box border-ridge">
+                    <strong>ridge</strong>
+                    <p>border: 5px ridge var(--neon-orange);</p>
+                </div>
+                
+                <div class="border-box border-inset">
+                    <strong>inset</strong>
+                    <p>border: 5px inset #00ffff;</p>
+                </div>
+                
+                <div class="border-box border-outset">
+                    <strong>outset</strong>
+                    <p>border: 5px outset #ff00ff;</p>
+                </div>
+                
+                <!-- Nuevos estilos -->
+                <div class="border-box border-hidden">
+                    <strong>hidden</strong>
+                    <p>border: 3px hidden var(--neon-cyan);</p>
+                </div>
+                
+                <div class="border-box border-gradient">
+                    <strong>gradient</strong>
+                    <p>gradient border con clip-path</p>
+                </div>
+                
+                <div class="border-box border-animated">
+                    <strong>animated</strong>
+                    <p>border con animación de color</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Bordes Individuales Avanzados -->
+        <section class="demo-section">
+            <h2>2. Bordes por Lado - Técnicas Avanzadas</h2>
+            <div class="individual-borders-grid">
+                <div class="border-box border-top-only">
+                    <strong>Solo arriba</strong>
+                    <p>border-top: 5px solid var(--neon-cyan);</p>
+                </div>
+                
+                <div class="border-box border-bottom-only">
+                    <strong>Solo abajo</strong>
+                    <p>border-bottom: 5px solid var(--neon-green);</p>
+                </div>
+                
+                <div class="border-box border-left-only">
+                    <strong>Solo izquierda</strong>
+                    <p>border-left: 5px solid var(--neon-pink);</p>
+                </div>
+                
+                <div class="border-box border-right-only">
+                    <strong>Solo derecha</strong>
+                    <p>border-right: 5px solid var(--neon-yellow);</p>
+                </div>
+                
+                <div class="border-box border-mixed">
+                    <strong>Múltiples lados</strong>
+                    <p>Combinación de 4 colores neon</p>
+                </div>
+                
+                <div class="border-box border-asymmetric">
+                    <strong>Asimétrico</strong>
+                    <p>Estilos y grosores diferentes</p>
+                </div>
+                
+                <div class="border-box border-gradient-sides">
+                    <strong>Gradiente lateral</strong>
+                    <p>border-image con gradient</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Border-Radius Extendido -->
+        <section class="demo-section">
+            <h2>3. Border-Radius - De Simple a Complejo</h2>
+            <div class="radius-grid">
+                <div class="radius-box radius-small">
+                    <strong>Pequeño (4px)</strong>
+                    <p>border-radius: var(--radius-sm);</p>
+                </div>
+                
+                <div class="radius-box radius-medium">
+                    <strong>Mediano (8px)</strong>
+                    <p>border-radius: var(--radius-md);</p>
+                </div>
+                
+                <div class="radius-box radius-large">
+                    <strong>Grande (12px)</strong>
+                    <p>border-radius: var(--radius-lg);</p>
+                </div>
+                
+                <div class="radius-box radius-xl">
+                    <strong>Extra Grande (16px)</strong>
+                    <p>border-radius: var(--radius-xl);</p>
+                </div>
+                
+                <div class="radius-box radius-pill">
+                    <strong>Píldora</strong>
+                    <p>border-radius: var(--radius-full);</p>
+                </div>
+                
+                <div class="radius-box radius-asymmetric">
+                    <strong>Asimétrico</strong>
+                    <p>border-radius: 20px 5px 30px 10px;</p>
+                </div>
+                
+                <div class="radius-box radius-oval">
+                    <strong>Oval</strong>
+                    <p>border-radius: 50% / 30%;</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Formas Creativas -->
+        <section class="demo-section">
+            <h2>4. Creando Formas con Border-Radius</h2>
+            <div class="shapes-grid">
+                <div class="shape-container">
+                    <div class="shape circle"></div>
+                    <p><strong>Círculo</strong></p>
+                    <code>border-radius: 50%;</code>
+                </div>
+                
+                <div class="shape-container">
+                    <div class="shape rounded-square"></div>
+                    <p><strong>Cuadrado Redondeado</strong></p>
+                    <code>border-radius: 25px;</code>
+                </div>
+                
+                <div class="shape-container">
+                    <div class="shape top-rounded"></div>
+                    <p><strong>Top Redondeado</strong></p>
+                    <code>border-radius: 50% 50% 0 0;</code>
+                </div>
+                
+                <div class="shape-container">
+                    <div class="shape leaf"></div>
+                    <p><strong>Hoja</strong></p>
+                    <code>border-radius: 0 100% 0 100%;</code>
+                </div>
+                
+                <div class="shape-container">
+                    <div class="shape heart"></div>
+                    <p><strong>Corazón</strong></p>
+                    <code>border-radius: 50% 50% 50% 0;</code>
+                </div>
+                
+                <div class="shape-container">
+                    <div class="shape diamond"></div>
+                    <p><strong>Diamante</strong></p>
+                    <code>border-radius: 0 20px 0 20px;</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Botones Neon -->
+        <section class="demo-section">
+            <h2>5. Botones con Efectos Neon</h2>
+            
+            <h3>Botones Básicos</h3>
+            <div class="buttons-demo">
+                <button class="btn btn-filled">Filled</button>
+                <button class="btn btn-outline">Outline</button>
+                <button class="btn btn-ghost">Ghost</button>
+                <button class="btn btn-neon-glow">Glow Effect</button>
+            </div>
+
+            <h3>Botones con Efectos Avanzados</h3>
+            <div class="buttons-demo">
+                <button class="btn btn-border-grow">Border Grow</button>
+                <button class="btn btn-border-spin">Border Spin</button>
+                <button class="btn btn-slide-border">Slide Border</button>
+                <button class="btn btn-gradient-border">Gradient Border</button>
+                <button class="btn btn-3d">3D Effect</button>
+            </div>
+        </section>
+
+        <!-- Sección 6: Cards Neon -->
+        <section class="demo-section">
+            <h2>6. Cards con Bordes Neon</h2>
+            <div class="cards-grid">
+                <div class="card card-simple">
+                    <h3>Card Simple</h3>
+                    <p>border: 1px solid rgba(255, 255, 255, 0.1);</p>
+                    <p>border-radius: 8px;</p>
+                </div>
+                
+                <div class="card card-thick">
+                    <h3>Borde Grueso</h3>
+                    <p>border: 3px solid var(--neon-cyan);</p>
+                    <p>box-shadow: var(--glow-cyan);</p>
+                </div>
+                
+                <div class="card card-accent">
+                    <h3>Card con Acento</h3>
+                    <p>border-left: 5px solid var(--neon-green);</p>
+                    <p>Efecto de acento lateral</p>
+                </div>
+                
+                <div class="card card-dashed">
+                    <h3>Borde Punteado</h3>
+                    <p>border: 2px dashed var(--neon-pink);</p>
+                    <p>border-radius: 12px;</p>
+                </div>
+                
+                <div class="card card-glow">
+                    <h3>Card Glow</h3>
+                    <p>Efecto glow permanente</p>
+                    <p>box-shadow con neon purple</p>
+                </div>
+                
+                <div class="card card-gradient">
+                    <h3>Gradient Border</h3>
+                    <p>Borde con gradiente neon</p>
+                    <p>Técnica background-clip</p>
+                </div>
+                
+                <div class="card card-animated">
+                    <h3>Border Animado</h3>
+                    <p>border-color animado</p>
+                    <p>Cambio cíclico de colores</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 7: Avatares y Badges -->
+        <section class="demo-section">
+            <h2>7. Avatares con Bordes Creativos</h2>
+            <div class="avatars-demo">
+                <div class="avatar-container">
+                    <div class="avatar avatar-circle">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+                    </div>
+                    <p>Circular</p>
+                </div>
+                
+                <div class="avatar-container">
+                    <div class="avatar avatar-rounded">
+                        <img src="https://i.pravatar.cc/100?img=2" alt="Avatar">
+                    </div>
+                    <p>Redondeado</p>
+                </div>
+                
+                <div class="avatar-container">
+                    <div class="avatar avatar-square">
+                        <img src="https://i.pravatar.cc/100?img=3" alt="Avatar">
+                    </div>
+                    <p>Cuadrado</p>
+                </div>
+                
+                <div class="avatar-container">
+                    <div class="avatar avatar-hexagon">
+                        <img src="https://i.pravatar.cc/100?img=4" alt="Avatar">
+                    </div>
+                    <p>Hexágono</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 8: Efectos Avanzados -->
+        <section class="demo-section">
+            <h2>8. Efectos de Borde Avanzados</h2>
+            <div class="advanced-grid">
+                <div class="advanced-box gradient-border">
+                    <p><strong>Border con Gradiente</strong></p>
+                    <p>Animación continua del gradiente</p>
+                    <p class="neon-text">Efecto neon text</p>
+                </div>
+                
+                <div class="advanced-box glow-border">
+                    <p><strong>Border con Glow</strong></p>
+                    <p>Efecto de pulsación constante</p>
+                    <p>box-shadow animado</p>
+                </div>
+                
+                <div class="advanced-box animated-border">
+                    <p><strong>Border Animado</strong></p>
+                    <p>Efecto de flujo continuo</p>
+                    <p>Pseudo-elemento animado</p>
+                </div>
+                
+                <div class="advanced-box morphing-border">
+                    <p><strong>Border Morphing</strong></p>
+                    <p>border-radius animado</p>
+                    <p>Transformación de formas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 9: Bordes Interactivos (Nueva) -->
+        <section class="demo-section">
+            <h2>9. Bordes Interactivos</h2>
+            <div class="interactive-demo">
+                <div class="interactive-box border-follow-cursor">
+                    <p><strong>Follow Cursor</strong></p>
+                    <p>Borde que sigue el cursor</p>
+                    <p>Efecto de iluminación</p>
+                </div>
+                
+                <div class="interactive-box gradient-animated">
+                    <p><strong>Gradient Animado</strong></p>
+                    <p>Gradiente en movimiento</p>
+                    <p>background-position animado</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 10: Código de Referencia -->
+        <section class="demo-section code-section">
+            <h2>📝 Referencia Completa de Borders</h2>
+            <pre><code>/* ===== ESTILOS DE BORDER ===== */
+border: 2px solid var(--neon-cyan);           /* Sólido */
+border: 3px dashed var(--neon-green);        /* Discontinuo */
+border: 3px dotted var(--neon-pink);         /* Punteado */
+border: 5px double var(--neon-yellow);       /* Doble línea */
+border: 5px groove var(--neon-purple);       /* 3D hundido */
+border: 5px ridge var(--neon-orange);        /* 3D elevado */
+border: 5px inset #00ffff;                  /* Contenido hundido */
+border: 5px outset #ff00ff;                 /* Contenido elevado */
+border: 3px hidden var(--neon-cyan);        /* Oculto */
+
+/* ===== BORDES POR LADO ===== */
+border-top: 5px solid var(--neon-cyan);
+border-right: 3px dashed var(--neon-pink);
+border-bottom: 4px dotted var(--neon-green);
+border-left: 6px double var(--neon-yellow);
+
+/* ===== BORDER-RADIUS ===== */
+border-radius: 4px;                         /* Todos iguales */
+border-radius: 4px 8px 12px 16px;           /* TL TR BR BL */
+border-radius: 50%;                         /* Círculo perfecto */
+border-radius: 50% / 30%;                   /* Elipse/Oval */
+
+/* Individual corners */
+border-top-left-radius: 10px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 40px;
+
+/* ===== EFECTOS ESPECIALES ===== */
+/* Gradiente border */
+border: 3px solid transparent;
+background: 
+    linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+    linear-gradient(45deg, var(--neon-cyan), var(--neon-pink)) border-box;
+
+/* Glow effect */
+border: 2px solid var(--neon-cyan);
+box-shadow: 0 0 20px var(--neon-cyan-glow);
+
+/* Animación de color */
+border: 3px solid var(--neon-cyan);
+animation: borderPulse 2s infinite;
+
+@keyframes borderPulse {
+    0%, 100% { border-color: var(--neon-cyan); }
+    50% { border-color: var(--neon-pink); }
+}
+
+/* ===== TRUCOS AVANZADOS ===== */
+/* Triángulo con borders */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid var(--neon-cyan);
+}
+
+/* Border morphing */
+.morph-border {
+    border: 3px solid var(--neon-cyan);
+    border-radius: 50% 50% 50% 50%;
+    animation: morph 4s infinite;
+}
+
+@keyframes morph {
+    0%, 100% { border-radius: 50% 50% 50% 50%; }
+    25% { border-radius: 30% 70% 70% 30%; }
+    50% { border-radius: 70% 30% 30% 70%; }
+    75% { border-radius: 30% 70% 70% 30%; }
+}</code></pre>
+        </section>
+    </div>
+
+    <!-- Scripts para efectos interactivos -->
+    <script>
+        // Remover preloader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Sistema de partículas
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 80;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Posición aleatoria
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Color aleatorio
+                const colors = [
+                    'var(--neon-cyan)',
+                    'var(--neon-pink)',
+                    'var(--neon-green)',
+                    'var(--neon-yellow)',
+                    'var(--neon-purple)',
+                    '#ffffff'
+                ];
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Animación aleatoria
+                const duration = Math.random() * 10 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `floatParticle ${duration}s linear ${delay}s infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Efecto follow cursor
+        const cursorBorder = document.querySelector('.border-follow-cursor');
+        if (cursorBorder) {
+            cursorBorder.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                this.style.setProperty('--mouse-x', `${x}%`);
+                this.style.setProperty('--mouse-y', `${y}%`);
+            });
+        }
+
+        // Inicializar efectos
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Efecto de clic en botones
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.3);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        pointer-events: none;
+                    `;
+                    
+                    button.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Añadir estilos para ripple
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
